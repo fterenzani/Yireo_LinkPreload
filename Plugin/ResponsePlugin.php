@@ -137,13 +137,13 @@ class ResponsePlugin
         }
 
         // Find all images
-        $images = $crawler->filter('img[src]')->extract(['src']);
+        /*$images = $crawler->filter('img[src]')->extract(['src']);
         foreach ($images as $link) {
             $link = $this->prepareLink($link);
             if (!empty($link)) {
                 $values[] = "<" . $link . ">; rel=preload; as=image";
             }
-        }
+        }*/
 
         if ($values) {
             $response->setHeader('Link', implode(', ', $values));
